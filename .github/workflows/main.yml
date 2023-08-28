@@ -50,4 +50,4 @@ jobs:
           password: ${{ env.SENHA }}
           port: 22
           script: |
-             pm2 delete /home/${{ env.USUARIO }}/htdocs/${{ env.USUARIO }}.fake.edu.br/index.js 2> /dev/null || true && cd /home/${{ env.USUARIO }}/htdocs/${{ env.USUARIO }}.fake.edu.br && pm2 start server.js -i 1
+             pm2 delete /home/${{ env.USUARIO }}/htdocs/${{ env.USUARIO }}.fake.edu.br/server.js 2> /dev/null || true && cd /home/${{ env.USUARIO }}/htdocs/${{ env.USUARIO }}.fake.edu.br && pm2 start server.js -i 1
