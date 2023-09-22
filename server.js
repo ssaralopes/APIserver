@@ -6,14 +6,25 @@ import cors from 'cors';
 const app = express();
 app.use(cors());
 app.use(express.json())
+ 
+const host = 'localhost';
+const port = '4040';
 
 const db = mysql.createConnection({
+
     host: "localhost",
-    user: 'root',
-    password:'',
-    // password: 'WE34HtdB4YOiYOLagNkr',
+    user: 'aluno40-pfsii',
+    password: 'WE34HtdB4YOiYOLagNkr',
+    port: 3306,
+    database: 'biblioteca'
+
+
+    // URL LOCAL 
+    // host: "localhost",
+    // user: 'root',
+    // password:'',
     // port: 3306,
-    database: 'usuarios'
+    // database: 'usuarios'
 });
 
 app.get('/', (re, res) => {
@@ -181,10 +192,14 @@ app.delete('/emprestimos/:id_emprestimo', (req, res) => {
 });
 
 
+app.listen(port, host, () => {
+    console.log(`Listening in : https://${host}/${port}`)
 
-app.listen(4040, ()=>{
-    console.log("Listening");
-})
+});
+// URL LOCAL 
+// app.listen(4040, ()=>{
+//     console.log("Listening");
+// })
 
 
 
